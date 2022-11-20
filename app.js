@@ -1,9 +1,9 @@
 const canvas = document.querySelector(".canvas");
-const context = canvas.getContext("2d");
-
-const frameCount = 180;
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
+
+const context = canvas.getContext("2d");
+const frameCount = 180;
 
 const currentFrame = (index) => `./ball/${(index + 1).toString()}.jpg`;
 
@@ -50,11 +50,14 @@ gsap.fromTo(
 images[0].onload = render;
 
 function render() {
+  context.canvas.width = images[0].width;
+  context.canvas.height = images[0].height;
+
   context.clearRect(0, 0, canvas.width, canvas.height);
   context.drawImage(images[ball.frame], 0, 0);
 }
 
-window.addEventListener("resize", () => {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-});
+// window.addEventListener("resize", () => {
+//   context.clearRect(0, 0, canvas.width, canvas.height);
+//   context.drawImage(images[ball.frame], 0, 0);
+// });

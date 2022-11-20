@@ -10,8 +10,9 @@ body {
 }
 
 canvas {
-  max-width: 100vw;
-  max-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
 }
 
 .details {
@@ -30,4 +31,10 @@ canvas {
   right: 20%;
   bottom: 40%;
   transform: translate(-20%, -40%);
+}
+
+@media screen and (min-width: 768px) {
+  .ball-text {
+    font-size: 3rem;
+  }
 }
