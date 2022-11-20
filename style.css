@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  overflow-x: hidden;
+}
+
+canvas {
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+.details {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.ball-text {
+  position: fixed;
+  z-index: 2;
+  color: white;
+  font-size: 5rem;
+  right: 20%;
+  bottom: 40%;
+  transform: translate(-20%, -40%);
+}
