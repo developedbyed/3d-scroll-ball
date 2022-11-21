@@ -33,8 +33,14 @@ canvas {
   transform: translate(-20%, -40%);
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 1024px) {
   .ball-text {
-    font-size: 3rem;
+    font-size: 2rem;
+    right: 50%;
+    bottom: 25%;
+    transform: translate(50%, 50%);
+  }
+  h1 {
+    font-size: 2rem;
   }
 }

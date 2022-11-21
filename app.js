@@ -3,9 +3,9 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 const context = canvas.getContext("2d");
-const frameCount = 180;
+const frameCount = 179;
 
-const currentFrame = (index) => `./ball/${(index + 1).toString()}.jpg`;
+const currentFrame = (index) => `./best-ball/${(index + 1).toString()}.jpg`;
 
 const images = [];
 let ball = { frame: 0 };
@@ -13,6 +13,7 @@ let ball = { frame: 0 };
 for (let i = 0; i < frameCount; i++) {
   const img = new Image();
   img.src = currentFrame(i);
+  console.log(currentFrame(i));
   images.push(img);
 }
 
@@ -37,7 +38,7 @@ gsap.fromTo(
     opacity: 1,
     scrollTrigger: {
       scrub: 1,
-      markers: true,
+
       start: "50%",
       end: "60%",
     },
@@ -56,8 +57,3 @@ function render() {
   context.clearRect(0, 0, canvas.width, canvas.height);
   context.drawImage(images[ball.frame], 0, 0);
 }
-
-// window.addEventListener("resize", () => {
-//   context.clearRect(0, 0, canvas.width, canvas.height);
-//   context.drawImage(images[ball.frame], 0, 0);
-// });
